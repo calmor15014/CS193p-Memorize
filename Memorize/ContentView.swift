@@ -12,6 +12,8 @@ struct ContentView: View {
     var viewModel: EmojiMemoryGame
     
     var body: some View {
+        // Show all the cards from the model in an HStack
+        // using our CardView
         HStack {
             ForEach(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
@@ -31,10 +33,12 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
+            // If face up, show the content of the card and a border
             if card.isFaceUp {
                 RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
                 RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3.0)
                 Text(card.content)
+            // Otherwise, show just the back of the card (solid color filll)
             } else {
                 RoundedRectangle(cornerRadius: 10.0).fill()
             }

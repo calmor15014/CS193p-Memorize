@@ -11,6 +11,7 @@ import Foundation
 struct MemoryGame<CardContent> {
     var cards: Array<Card>
     
+    // Stub to identify that the view can pass the intent to the model
     func choose(card: Card) {
         print("card chosen: \(card)")
     }
@@ -30,6 +31,7 @@ struct MemoryGame<CardContent> {
         cards.shuffle()
     }
     
+    // Define what a card is, including a Type Parameter content var
     struct Card: Identifiable {
         var isFaceUp: Bool = true
         var isMatched: Bool = false
