@@ -22,7 +22,7 @@ struct ContentView: View {
         .padding()
         .foregroundColor(Color.orange)
         // Font adjustment for count - Lecture 2 homework item #5
-        .font(viewModel.cards.count < 4 ? Font.largeTitle : Font.title)
+        .font(viewModel.cards.count < 10 ? Font.largeTitle : Font.title)
     }
 }
 
