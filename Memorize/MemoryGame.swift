@@ -10,6 +10,7 @@ import Foundation
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
     var cards: Array<Card>
+    var score: Int = 0
     
     var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
@@ -20,14 +21,19 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
     }
     
-    // Choose only does something if we can find the card
     mutating func choose(card: Card) {
-        print("card chosen: \(card)")
-        if let chosenIndex = cards.firstIndex(matching: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched {
+        // Choose only does something if we can find the card, and the card is not face up
+        if let chosenIndex = cards.firstIndex(matching: card), !cards[chosenIndex].isFaceUp {
             if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
+                    score += 2
+                } else if cards[chosenIndex].hasBeenSeen || cards[potentialMatchIndex].hasBeenSeen {
+                    score -= 1
+                } else {
+                    cards[chosenIndex].hasBeenSeen = true
+                    cards[potentialMatchIndex].hasBeenSeen = true
                 }
                 cards[chosenIndex].isFaceUp = true
             } else {
@@ -55,6 +61,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     struct Card: Identifiable {
         var isFaceUp: Bool = false
         var isMatched: Bool = false
+        var hasBeenSeen: Bool = false
         var content: CardContent
         var id: Int
     }

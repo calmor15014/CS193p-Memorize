@@ -12,15 +12,28 @@ struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
+        // Homework 2 - items 6, 7, and 9
+        // Make space in the UI for score, theme, and new button
         // Use our new Grid to show the cards
-        Grid(viewModel.cards) { card in
-            CardView(card: card).onTapGesture {
-                viewModel.choose(card: card)
+        VStack {
+            HStack {
+                Text(viewModel.themeName)
+                Spacer()
+                Button("New Game") {
+                    viewModel.newGame()
+                }
             }
-            .padding(5)
+            .padding(.horizontal)
+            Grid(viewModel.cards) { card in
+                CardView(card: card).onTapGesture {
+                    viewModel.choose(card: card)
+                }
+                .padding(5)
+            }
+            .padding()
+            .foregroundColor(viewModel.themeColor)
+            Text("Score: \(viewModel.score)")
         }
-        .padding()
-        .foregroundColor(Color.orange)
     }
 }
 
