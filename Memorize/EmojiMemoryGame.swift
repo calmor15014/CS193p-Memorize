@@ -20,7 +20,7 @@ class EmojiMemoryGame: ObservableObject {
     }
     
     // Start a MemoryGame with emojis (strings)
-    static func createMemoryGame(theme: EmojiMemoryGameTheme) -> MemoryGame<String> {
+    private static func createMemoryGame(theme: EmojiMemoryGameTheme) -> MemoryGame<String> {
         // Random function answer to Lecture 2 homework # 4
         let pairs = theme.numberOfPairs ?? Int.random(in: 2..<theme.emojis.count)
         return MemoryGame<String>(numberOfPairsOfCards: pairs) { pairIndex in
