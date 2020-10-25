@@ -42,21 +42,13 @@ struct CardView: View {
     
     var body: some View {
         GeometryReader { geometry in
+            if card.isFaceUp || !card.isMatched {
                 ZStack {
-                    // If face up, show the content of the card and a border
-                    if card.isFaceUp {
-                        RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
-                        RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
-                        PieView(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(110-90), clockwise: true).padding(5).opacity(0.4)
-                        Text(card.content)
-                    // Otherwise, show just the back of the card (solid color filll)
-                    } else {
-                        if !card.isMatched {
-                            RoundedRectangle(cornerRadius: cornerRadius).fill()
-                        }
-                    }
-                }
+                    PieView(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(110-90), clockwise: true).padding(5).opacity(0.4)
+                    Text(card.content)
+                }.cardify(isFaceUp: card.isFaceUp)
                 .font(Font.system(size: fontSize(for: geometry.size)))
+            }
         }
         // Lecture 2 homework item #3 - no longer needed with Grid
         //.aspectRatio(2/3, contentMode: .fit)
@@ -64,8 +56,7 @@ struct CardView: View {
     
     // MARK: - Drawing Constants
     
-    private let cornerRadius: CGFloat = 10.0
-    private let edgeLineWidth: CGFloat = 3.0
+
     private func fontSize(for size: CGSize) -> CGFloat {
         min(size.width, size.height) * 0.7
     }
