@@ -16,7 +16,7 @@ struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
         self.viewForItem = viewForItem
     }
     
-    // Swift in XCode 11.x required this structure to remove excessive "self" calls
+// Swift in XCode 11.x required this structure to remove excessive "self" calls
 //    var body: some View {
 //        GeometryReader { geometry in
 //            body(for: GridLayout(itemCount: items.count, in: geometry.size))

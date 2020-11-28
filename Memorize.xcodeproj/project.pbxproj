@@ -19,6 +19,7 @@
 		5D8C9F97253394B200EA7FD8 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8C9F96253394B200EA7FD8 /* GridLayout.swift */; };
 		5D8C9F9A253399E900EA7FD8 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8C9F99253399E900EA7FD8 /* Array+Identifiable.swift */; };
 		5D8C9F9D2533A97000EA7FD8 /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8C9F9C2533A97000EA7FD8 /* Array+Only.swift */; };
+		5DCF29A32571CF3A00481303 /* UIColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCF29A22571CF3A00481303 /* UIColor+RGBA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5D8C9F96253394B200EA7FD8 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		5D8C9F99253399E900EA7FD8 /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 		5D8C9F9C2533A97000EA7FD8 /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
+		5DCF29A22571CF3A00481303 /* UIColor+RGBA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGBA.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				5D8C9F7C252A8AB400EA7FD8 /* MemorizeApp.swift */,
 				5D8C9F8F2531452F00EA7FD8 /* EmojiMemoryGame.swift */,
+				5DCF29A22571CF3A00481303 /* UIColor+RGBA.swift */,
 				5D8C9F7E252A8AB400EA7FD8 /* EmojiMemoryGameView.swift */,
 				5D1A4B1B25411EF800768F6B /* Cardify.swift */,
 				5D1A4B182541185F00768F6B /* PieView.swift */,
@@ -165,6 +168,7 @@
 				5D8C9F8D2531426E00EA7FD8 /* MemoryGame.swift in Sources */,
 				5D8C9F7F252A8AB400EA7FD8 /* EmojiMemoryGameView.swift in Sources */,
 				5D8C9F7D252A8AB400EA7FD8 /* MemorizeApp.swift in Sources */,
+				5DCF29A32571CF3A00481303 /* UIColor+RGBA.swift in Sources */,
 				5D8C9F97253394B200EA7FD8 /* GridLayout.swift in Sources */,
 				5D8C9F9425338F8300EA7FD8 /* Grid.swift in Sources */,
 				5D1A4B192541185F00768F6B /* PieView.swift in Sources */,
